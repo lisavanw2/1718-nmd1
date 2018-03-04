@@ -236,13 +236,15 @@ footer {
     }
     #introPort,
     .about_me,
-    .future, #portfolio {
+    .future,
+    #portfolio {
         max-width: 500px;
         padding-left: 10%;
     }
     ul li {
         margin-bottom: 5px
     }
+
 }
 
 @media screen and (min-width:900px) {

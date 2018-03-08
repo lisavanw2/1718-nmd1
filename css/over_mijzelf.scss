@@ -18,7 +18,7 @@ header {
         font-weight: bolder;
     }
     #intro {
-        margin-left: 200px;
+        margin-left: 50%;
         margin-right: 10px;
         padding-top: 45px;
         margin-top: 45px;
@@ -32,7 +32,8 @@ header {
 }
 
 nav {
-    width: 100%;
+    width: 120%;
+    left: 0;
     font-weight: 600;
     display: block;
     position: fixed;
@@ -40,18 +41,21 @@ nav {
     z-index: 1;
     font-size: 0.6*$fontsize;
     img {
+        right: 0;
         float: right;
+        margin-right: 19%;
+        margin-top: 5px;
     }
     li {
         border-bottom: 1px solid #eee;
-        margin-right: 30px;
+        margin-right: 90px;
         margin-bottom: 5px;
-        padding-top: 5px;
+        padding-top: 15px;
         padding-bottom: 5px;
 
     }
     li:first-child {
-        padding-top: 5px;
+        padding-top: 15px;
     }
     li:last-child {
         border-bottom: 0;
@@ -60,7 +64,7 @@ nav {
         color: lightblue;
     }
     ul {
-        background-color: rgba(255, 0, 0, 0.4);
+        background-color: rgb(255, 90, 90);
         display: none;
         margin-right: 50px;
         width: 100%;
@@ -86,7 +90,12 @@ nav {
     }
 }
 
-#omschrijving {
+#about_me {
+    margin-top: 10px;
+}
+
+#omschrijving,
+#ssdOmschrijving {
     font-size: 0.6*$fontsize
 }
 
@@ -97,6 +106,11 @@ nav {
     display: block;
     margin: 0 auto;
     max-width: 100%;
+    padding-bottom: 10px;
+}
+
+#ssd {
+    max-width: 33.33333%
 }
 
 #compositie {
@@ -113,6 +127,8 @@ nav {
 }
 
 html {
+    background-color: black; //  background-color: white;
+    max-width: 100%;
     font-family: $font;
     font-size: 0.6*$fontsize;
     .content {
@@ -136,29 +152,50 @@ html {
     }
 }
 
+.about_me ul {
+    margin-bottom: 10px;
+}
+
+body {
+    width: 80%;
+    margin: 0 auto;
+    background-color: white;
+}
+
 footer {
-    padding-left: 50px;
+    position: absolute;
+    width: 100%;
+    margin-left: -20%;
+    padding-left: 10%;
     text-align: center;
-    background-color: rgba(255, 0, 0, 0.7);
+    background-color: rgb(255, 90, 90);
     color: white;
     font-size: 0.6*$fontsize;
     padding-bottom: 5px;
-    padding-top: 5px;
+    padding-top: 10px;
 }
 
-@media screen and (min-width:480px) {
+
+@media screen and (min-width:510px) {
     header {
         height: 400px;
         font-size: $fontsize;
         #intro {
-            padding-top: 90px;
-            padding-left: 140px;
             padding-right: 20px;
+            padding-top: 20%;
         }
     }
+    #ssdOmschrijving,
     #omschrijving {
-        font-size: 0.6*$fontsize;
-        margin-top: 10%;
+        position: absolute;
+        font-size: 0.55*$fontsize;
+        margin-top: 10px;
+        left: 55%;
+        width: 38%; //  margin: -35% 0 0 -25%;
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 0px 0px 5px red; //  display: table-cell;
+        //  height: 100%;
     }
     #landschap,
     #logo,
@@ -167,19 +204,40 @@ footer {
         float: left;
         max-width: 50%;
         margin-right: 5%;
-        padding-bottom: 10px
+        padding-bottom: 10px; //  display: table-cell;
     }
-
+    #ssd {
+        margin-top: 90px;
+        margin-bottom: 90px;
+        display: inline-block;
+        max-width: 16.66666667%;
+    }
+    #ssdOmschrijving {
+        font-size: 0.6*$fontsize;
+        margin-top: -210px;
+    }
+    #poster {
+        padding-bottom: 15px;
+    }
     #compositie {
         max-width: 40%;
         margin-left: 5%;
         float: left;
     }
-    #opdracht {
-        width: 100%;
-        overflow: auto;
-        border-bottom: 2px solid rgba(255, 0, 0, 0.5);
+    #portfolio:before {
+        content: "";
+        display: block;
+        height: 60px;
+        margin: -60px 0 0;
     }
+    #opdracht {
+        position: relative;
+        width: 100%; //  display: table;
+        height: 100%;
+        overflow: auto;
+        border-bottom: 2px solid rgba(255, 90, 90, 1);
+    }
+
     #foto {
         margin-right: 48%;
         max-width: 13%;
@@ -188,6 +246,9 @@ footer {
     #landschap,
     #poster {
         padding-top: 20px;
+    }
+    #landschap {
+        margin-bottom: 10px;
     }
     #stad {
         padding-top: 10px
@@ -200,7 +261,6 @@ footer {
         }
         margin-top: 0px;
         font-size: $fontsize;
-        margin-right: 30px;
         ul li {
             padding-right: 20px
         }
@@ -234,13 +294,20 @@ footer {
     header {
         height: 500px;
         #intro {
-            padding-left: 280px;
+            // padding-left: 280px;
             padding-top: 90px;
             padding-right: 30px
         }
     }
     #omschrijving {
         font-size: 0.7*$fontsize;
+        line-height: 1.5;
+        margin-top: 40px;
+    }
+    #ssdOmschrijving {
+        font-size: 0.7*$fontsize;
+        line-height: 1.5;
+        margin-top: -240px;
     }
     p,
     ul {
@@ -264,7 +331,7 @@ footer {
         height: 600px;
         #intro {
             padding-right: 40px;
-            padding-left: 330px;
+
             padding-top: 180px;
         }
     }
@@ -274,9 +341,18 @@ footer {
         max-width: 700px;
     }
     #omschrijving {
-        font-size: 0.8*$fontsize;
-        margin-top: 150px;
+        font-size: 0.9*$fontsize; // margin-top: 150px;
         margin-right: 50px;
+        line-height: 1.4;
+    }
+    #ssdOmschrijving {
+        font-size: 0.9*$fontsize;
+        line-height: 1.4;
+        margin-top: -290px;
+    }
+    #ssd {
+        margin-top: 120px;
+        margin-bottom: 120px
     }
     html .content {
         margin-left: 50px;
@@ -293,4 +369,19 @@ footer {
         padding-left: 225px;
         padding-right: 45px;
     }
+    #omschrijving {
+        line-height: 2
+    }
+    #ssdOmschrijving {
+        line-height: 2;
+        margin-top: -320px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+    #ssd {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        ;
+    }
+
 }
